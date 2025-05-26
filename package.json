@@ -1,13 +1,14 @@
 {
-  "name": "learn-html-year2",
+  "name": "web-design-class",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx serve"
+    "start": "serve",
+    "build": "echo 'Build script not defined' && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "serve": "^14.2.4"
   }
