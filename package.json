@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "serve",
-    "build": "echo 'Build script not defined' && exit 1"
+    "style": "npx @tailwindcss/cli -i ./19-05-2025/style.css -o ./19-05-2025/app.css --watch"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "serve": "^14.2.4"
+    "@tailwindcss/cli": "^4.1.8",
+    "serve": "^14.2.4",
+    "tailwindcss": "^4.1.8"
   }
 }

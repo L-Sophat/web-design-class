@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+:root {
+    --color-primary: red;
+    --color-pink: #f6339a;
+    --color-blue: #2b7fff;
+    --color-green: #00c951;
+    --color-yellow: #f0b100;
+}
+
+.corner {
+    position: relative;
+    width: fit-content;
+    line-height: 1.75;
+    padding: 0 15px;
+    color: white;
+}
+
+.corner::after {
+    content: '';
+    position: absolute;
+    right: -14px;
+    top: 0;
+    width: 0;
+    height: 100%;
+    border-left: 14px solid var(--color-primary);
+    border-top: 28px solid transparent;
+    border-bottom: 0 solid transparent;
+}
+
+.corner.pink::after {
+    border-left: 14px solid var(--color-pink);
+}
+
+.corner.blue::after {
+    border-left: 14px solid var(--color-blue);
+}
+.corner.green::after {
+    border-left: 14px solid var(--color-green);
+}
+.corner.yellow::after {
+    border-left: 14px solid var(--color-yellow);
+}
