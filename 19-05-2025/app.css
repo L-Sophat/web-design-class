@@ -22,6 +22,8 @@
     --text-sm--line-height: calc(1.25 / 0.875);
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
     --leading-tight: 1.25;
     --drop-shadow-2xl: 0 25px 25px rgb(0 0 0 / 0.15);
     --default-transition-duration: 150ms;
@@ -220,11 +222,17 @@
   .z-50 {
     z-index: 50;
   }
-  .col-4 {
-    grid-column: 4;
-  }
   .mx-auto {
     margin-inline: auto;
+  }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+  .mt-3 {
+    margin-top: calc(var(--spacing) * 3);
+  }
+  .mt-10 {
+    margin-top: calc(var(--spacing) * 10);
   }
   .line-clamp-1 {
     overflow: hidden;
@@ -250,6 +258,14 @@
   .table {
     display: table;
   }
+  .size-9 {
+    width: calc(var(--spacing) * 9);
+    height: calc(var(--spacing) * 9);
+  }
+  .size-12 {
+    width: calc(var(--spacing) * 12);
+    height: calc(var(--spacing) * 12);
+  }
   .size-16 {
     width: calc(var(--spacing) * 16);
     height: calc(var(--spacing) * 16);
@@ -260,11 +276,14 @@
   .h-1\/2 {
     height: calc(1/2 * 100%);
   }
+  .h-9 {
+    height: calc(var(--spacing) * 9);
+  }
+  .h-12 {
+    height: calc(var(--spacing) * 12);
+  }
   .h-32 {
     height: calc(var(--spacing) * 32);
-  }
-  .h-44 {
-    height: calc(var(--spacing) * 44);
   }
   .h-52 {
     height: calc(var(--spacing) * 52);
@@ -272,14 +291,14 @@
   .h-64 {
     height: calc(var(--spacing) * 64);
   }
-  .h-96 {
-    height: calc(var(--spacing) * 96);
-  }
   .h-fit {
     height: fit-content;
   }
   .h-full {
     height: 100%;
+  }
+  .w-12 {
+    width: calc(var(--spacing) * 12);
   }
   .w-60 {
     width: calc(var(--spacing) * 60);
@@ -349,11 +368,20 @@
   .justify-start {
     justify-content: flex-start;
   }
+  .gap-1 {
+    gap: calc(var(--spacing) * 1);
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
   .gap-3 {
     gap: calc(var(--spacing) * 3);
   }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
+  }
+  .gap-6 {
+    gap: calc(var(--spacing) * 6);
   }
   .gap-7 {
     gap: calc(var(--spacing) * 7);
@@ -367,10 +395,6 @@
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
-  }
-  .border-b {
-    border-bottom-style: var(--tw-border-style);
-    border-bottom-width: 1px;
   }
   .border-b-2 {
     border-bottom-style: var(--tw-border-style);
@@ -439,6 +463,9 @@
   .p-5 {
     padding: calc(var(--spacing) * 5);
   }
+  .py-5 {
+    padding-block: calc(var(--spacing) * 5);
+  }
   .text-left {
     text-align: left;
   }
@@ -454,13 +481,17 @@
     font-size: var(--text-xs);
     line-height: var(--tw-leading, var(--text-xs--line-height));
   }
-  .leading-7 {
-    --tw-leading: calc(var(--spacing) * 7);
-    line-height: calc(var(--spacing) * 7);
-  }
   .leading-tight {
     --tw-leading: var(--leading-tight);
     line-height: var(--leading-tight);
+  }
+  .font-medium {
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
+  }
+  .font-normal {
+    --tw-font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-normal);
   }
   .text-white {
     color: var(--color-white);
@@ -539,6 +570,11 @@
       }
     }
   }
+  .max-lg\:px-3 {
+    @media (width < 64rem) {
+      padding-inline: calc(var(--spacing) * 3);
+    }
+  }
   .max-md\:flex-col {
     @media (width < 48rem) {
       flex-direction: column;
@@ -564,9 +600,9 @@
       width: 100%;
     }
   }
-  .max-sm\:flex-col {
+  .max-sm\:px-3 {
     @media (width < 40rem) {
-      flex-direction: column;
+      padding-inline: calc(var(--spacing) * 3);
     }
   }
   .sm\:col-span-2 {
@@ -594,29 +630,14 @@
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }
+  .lg\:grid-cols-3 {
+    @media (width >= 64rem) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
   .lg\:grid-cols-4 {
     @media (width >= 64rem) {
       grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-  }
-  .\[\&\>a\]\:h-32 {
-    &>a {
-      height: calc(var(--spacing) * 32);
-    }
-  }
-  .\[\&\>a\]\:max-w-\[100px\] {
-    &>a {
-      max-width: 100px;
-    }
-  }
-  .\[\&\>a\]\:max-w-\[150px\] {
-    &>a {
-      max-width: 150px;
-    }
-  }
-  .\[\&\>a\]\:max-w-\[200px\] {
-    &>a {
-      max-width: 200px;
     }
   }
   .\[\&\>a\]\:shrink-0 {
@@ -735,6 +756,10 @@
   syntax: "*";
   inherits: false;
 }
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
 @property --tw-outline-style {
   syntax: "*";
   inherits: false;
@@ -829,6 +854,7 @@
       --tw-gradient-via-position: 50%;
       --tw-gradient-to-position: 100%;
       --tw-leading: initial;
+      --tw-font-weight: initial;
       --tw-outline-style: solid;
       --tw-blur: initial;
       --tw-brightness: initial;
