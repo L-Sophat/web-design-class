@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="flex items-center h-screen justify-center">
+
+    <form id="calculator" class="container">
+        <h1 class="text-2xl font-bold">Calculator</h1>
+        <div class="group-result">
+            <input type="text" id="history" class="history" readonly placeholder="Results History">
+            <input type="text" id="display" class="result" readonly placeholder="0">
+        </div>
+        <div class="grid grid-cols-4 gap-4 mt-4">
+            <input type="button" class="button" value="%">
+            <input type="button" class="button" value="AC">
+            <input type="button" class="button" value="C">
+            <input type="button" class="button" value="⌫">
+            <input type="button" class="button" value="/">
+            <input type="button" class="button" value="7">
+            <input type="button" class="button" value="8">
+            <input type="button" class="button" value="9">
+            <input type="button" class="button" value="*">
+            <input type="button" class="button" value="4">
+            <input type="button" class="button" value="5">
+            <input type="button" class="button" value="6">
+            <input type="button" class="button" value="-">
+            <input type="button" class="button" value="1">
+            <input type="button" class="button" value="2">
+            <input type="button" class="button" value="3">
+            <input type="button" class="button" value="+">
+            <input type="button" class="button" value="0">
+            <input type="button" class="button" value=".">
+            <input type="button" class="button active" value="=">
+        </div>
+    </form>
+
+    <script src="./script.js"></script>
+</body>
+</html>
